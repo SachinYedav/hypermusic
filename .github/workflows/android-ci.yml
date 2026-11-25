@@ -1,0 +1,31 @@
+name: Android CI
+
+on:
+  pull_request:
+    paths:
+      - 'app/**'
+      - 'legal/**'
+      - 'gradle/**'
+      - '**/*.gradle.kts'
+      - 'gradle.properties'
+      - 'gradlew*'
+      - '.github/workflows/android-ci.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: android-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - uses: gradle/actions/setup-gradle@v3
+      - run: bash ./gradlew :app:assembleDebug --no-daemon

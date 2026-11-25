@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">HyperMusic</string>
+    <string name="shortcut_search">Search</string>
+    
+    <!-- Widget Meta Information -->
+    <string name="widget_search_and_play_name">Search &amp; Play</string>
+    <string name="widget_search_and_play_desc">Music controls with instant search bar</string>
+    <string name="widget_capsule_name">Compact Capsule</string>
+    <string name="widget_capsule_desc">Minimal floating bar for quick playback</string>
+    <string name="widget_recommended_name">Player &amp; Shortcuts</string>
+    <string name="widget_recommended_desc">Playback controls with quick navigation shortcuts</string>
+    <string name="widget_large_player_name">Expanded Player</string>
+    <string name="widget_large_player_desc">Full cover art with complete playback controls</string>
+
+    <!-- Widget Content & Accessibility Strings -->
+    <string name="widget_default_title">HyperMusic</string>
+    <string name="widget_default_artist">Turn on the HyperMusic</string>
+    <string name="widget_search_hint">Search Songs, Playlists and Artists</string>
+    <string name="widget_action_play_pause">Play or pause</string>
+    <string name="widget_action_next">Next track</string>
+    <string name="widget_action_previous">Previous track</string>
+    <string name="widget_action_repeat">Repeat mode</string>
+    <string name="widget_action_like">Like track</string>
+    <string name="widget_action_unlike">Unlike track</string>
+    <string name="widget_action_like_unavailable">Like unavailable for device files</string>
+    <string name="widget_action_like_no_track">No track playing</string>
+    <string name="widget_shortcut_playlists">Playlists</string>
+    <string name="widget_shortcut_explore">Explore</string>
+    <string name="widget_shortcut_history">History</string>
+    <string name="widget_shortcut_liked">Liked Songs</string>
+    <string name="widget_artwork_desc">Track artwork</string>
+</resources>

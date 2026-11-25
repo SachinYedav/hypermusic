@@ -1,0 +1,14 @@
+{
+  "Privacy Policy": [
+    { "text": "HyperMusic GitHub issue tracker", "url": "https://github.com/SachinYedav/hypermusic/issues" },
+    { "text": "Google's Privacy Policy", "url": "https://policies.google.com/privacy" }
+  ],
+  "Terms of Use": [
+    { "text": "repository LICENSE", "url": "https://github.com/SachinYedav/hypermusic/blob/main/LICENSE" },
+    { "text": "project issue tracker", "url": "https://github.com/SachinYedav/hypermusic/issues" }
+  ],
+  "Copyright & Contact": [
+    { "text": "HyperMusic GitHub issue tracker", "url": "https://github.com/SachinYedav/hypermusic/issues" },
+    { "text": "GPL-3.0-or-later", "url": "https://github.com/SachinYedav/hypermusic/blob/main/LICENSE" }
+  ]
+}

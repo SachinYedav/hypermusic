@@ -1,0 +1,158 @@
+{
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "November 24, 2026",
+    "sections": [
+      {
+        "title": "This website",
+        "webOnly": true,
+        "paragraphs": [
+          "This site provides project information, release notes, and Android APK downloads. Music search, playback, and playlists are features of the Android app.",
+          "The site does not include analytics, advertising, accounts, or a contact form. The site code does not set cookies or store information in localStorage, sessionStorage, or IndexedDB. The hosting provider and GitHub may receive information such as your IP address and request details when you visit the site or follow a download link."
+        ]
+      },
+      {
+        "title": "Your Android library and backups",
+        "paragraphs": [
+          "HyperMusic stores playlists, liked tracks, listening history, preferences, and downloaded tracks on your device. There are no HyperMusic accounts or app-managed library cloud sync. Android backup is enabled. Eligible app data may be backed up or restored according to your device settings and Android's backup behavior."
+        ]
+      },
+      {
+        "title": "Search, streaming, and lyrics",
+        "paragraphs": [
+          "Online searches and suggestions send search text to YouTube Music. Streaming and discovery contact YouTube, YouTube Music, and their media servers. Artwork can be loaded from remote image servers. These services receive network information such as your IP address and request headers.",
+          "Lyrics lookups can send a track title, artist, and available duration to LRCLIB, including for tracks stored on your device. For online tracks, the app can use YouTube Music lyrics as a fallback. When you request a translation, the app sends the lyrics text and target language to Google Translate.",
+          "These providers handle requests on their own services. Google's Privacy Policy explains its data practices for services such as YouTube, YouTube Music, and Google Translate. LRCLIB handles lyric lookup requests separately from HyperMusic."
+        ]
+      },
+      {
+        "title": "Voice search",
+        "paragraphs": [
+          "When you use voice search, HyperMusic requests microphone permission if needed and opens Android's speech recognizer. The recognizer may process audio remotely depending on the provider. HyperMusic receives the recognized text and submits it to YouTube Music as a search query."
+        ]
+      },
+      {
+        "title": "App updates",
+        "paragraphs": [
+          "HyperMusic requests release information from GitHub at startup and when the App Updates screen checks for a new version. When you choose to download an update, Android opens the published download link."
+        ]
+      },
+      {
+        "title": "Permissions and data removal",
+        "paragraphs": [
+          "Media permission lets HyperMusic find and play audio on your device. Notification and foreground-service permissions support playback and downloads. Review or revoke permissions in Android Settings.",
+          "Storage Management lets you clear the cache, listening history, or downloads. To remove all local app data, use Clear storage for HyperMusic in Android Settings. This removes data from the installed copy. Android backup and restore are managed separately."
+        ]
+      },
+      {
+        "title": "Children's privacy",
+        "paragraphs": [
+          "The Android app is intended for people who meet the minimum age in the Terms of Use. If a concern involves a child's personal information, keep that information out of public issues."
+        ]
+      },
+      {
+        "title": "Privacy questions and requests",
+        "paragraphs": [
+          "Use the HyperMusic GitHub issue tracker for general privacy questions and non-sensitive reports. Issues are public. Keep private requests, personal information, files, credentials, and listening history out of issue reports. HyperMusic does not currently list a private channel for privacy requests."
+        ]
+      },
+      {
+        "title": "Privacy Policy updates",
+        "paragraphs": [
+          "When we publish a revised Privacy Policy, we update the Last updated date. The website shows the policy included in its current deployment. The Android app shows the policy bundled with the installed version."
+        ]
+      }
+    ]
+  },
+  "terms": {
+    "title": "Terms of Use",
+    "lastUpdated": "November 24, 2026",
+    "sections": [
+      {
+        "title": "Scope and software license",
+        "paragraphs": [
+          "These Terms cover the HyperMusic Android app and project website. The website provides information, release notes, and links to Android downloads.",
+          "HyperMusic is an independently maintained project. It is not affiliated with, endorsed by, or sponsored by Google, YouTube, or YouTube Music. Trademarks belong to their respective owners.",
+          "HyperMusic is distributed under the GNU General Public License, version 3 or later. The repository LICENSE governs rights to run, copy, modify, and redistribute the software. These Terms do not limit rights or change termination conditions under that license."
+        ]
+      },
+      {
+        "title": "Android app use and minimum age",
+        "paragraphs": [
+          "By downloading, installing, or using the HyperMusic app, you agree to these Terms of Use. You must be at least 13 years old (or meet the minimum legal age in your jurisdiction) to use the app. If you disagree with these Terms, stop using the app and uninstall it.",
+          "Follow applicable laws and the terms of the third-party services you use. Those services may restrict extraction, downloading, caching, or bypassing their access interfaces. Access to a track, artwork, or lyrics does not transfer copyright or grant redistribution permission.",
+          "Do not use HyperMusic to distribute, archive, or rebroadcast third-party content without authorization, including for commercial distribution or mass automated archiving. These content-use restrictions concern third-party content."
+        ]
+      },
+      {
+        "title": "Downloads and availability",
+        "paragraphs": [
+          "Review the version, device requirements, and release notes before installing. Keep copies of information important to you before changing or removing an installed app. Streaming availability depends on external services, region, and network conditions."
+        ]
+      },
+      {
+        "title": "Warranties and liability for app use",
+        "paragraphs": [
+          "The software is provided on an as-is and as-available basis. The repository LICENSE sets out the software warranty and liability terms. HyperMusic does not guarantee uninterrupted operation or continued access to third-party services.",
+          "To the extent permitted by applicable law and subject to the repository LICENSE, the developers and contributors are not liable for direct, indirect, incidental, or consequential damages arising from use of the app or inability to use it, including claims related to third-party account termination."
+        ]
+      },
+      {
+        "title": "Indemnification for Android app use",
+        "paragraphs": [
+          "By operating this software, you agree to defend, indemnify, and hold harmless the developers, contributors, and maintainers of HyperMusic from and against any and all claims, damages, obligations, losses, liabilities, costs, or debt, and expenses (including attorney's fees) arising from your use of the software, or your violation of any third-party Terms of Service or intellectual property laws."
+        ]
+      },
+      {
+        "title": "Applicable law",
+        "paragraphs": [
+          "These Terms apply to the extent permitted by applicable law. If a provision is unenforceable, the remaining provisions continue to apply."
+        ]
+      },
+      {
+        "title": "Website availability",
+        "webOnly": true,
+        "paragraphs": [
+          "The website may change, become unavailable, or contain errors. Use the project issue tracker to report reproducible problems."
+        ]
+      },
+      {
+        "title": "Terms of Use updates",
+        "paragraphs": [
+          "When we publish revised Terms of Use, we update the Last updated date. The website shows the terms included in its current deployment. The Android app shows the terms bundled with the installed version."
+        ]
+      }
+    ]
+  },
+  "copyright": {
+    "title": "Copyright & Contact",
+    "lastUpdated": "November 24, 2026",
+    "sections": [
+      {
+        "title": "Project and dependencies",
+        "paragraphs": [
+          "HyperMusic is distributed under GPL-3.0-or-later. Third-party libraries retain their own licenses and notices. View them in the Android app under Settings → About → Open Source Licenses.",
+          "Application icons are derived from Lucide Icons (ISC License) and Feather Icons (MIT License)."
+        ]
+      },
+      {
+        "title": "Music, artwork, and lyrics",
+        "paragraphs": [
+          "Music, artwork, artist names, and lyrics belong to their respective rights holders. HyperMusic is a client for third-party sources and does not claim ownership of that content."
+        ]
+      },
+      {
+        "title": "Project-controlled content",
+        "paragraphs": [
+          "Use the HyperMusic GitHub issue tracker for general questions and non-sensitive reports about repository files or content on the HyperMusic website. Give the repository path or page and describe the issue. GitHub issues are public. Keep private copyright complaints, identity documents, and other sensitive information out of issue reports. HyperMusic does not currently list a private channel for copyright complaints."
+        ]
+      },
+      {
+        "title": "Content hosted by other services",
+        "paragraphs": [
+          "For content hosted by a third-party service, use that service's reporting process. This page describes HyperMusic's general project reporting process."
+        ]
+      }
+    ]
+  }
+}

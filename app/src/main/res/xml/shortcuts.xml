@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut android:shortcutId="search" android:icon="@drawable/ic_shortcut_search"
+        android:shortcutShortLabel="@string/shortcut_search">
+        <intent android:action="com.hypermusic.action.OPEN_SEARCH"
+            android:targetPackage="com.hypermusic" android:targetClass="com.hypermusic.MainActivity" />
+    </shortcut>
+    <shortcut android:shortcutId="playlists" android:icon="@drawable/ic_shortcut_playlists"
+        android:shortcutShortLabel="@string/widget_shortcut_playlists">
+        <intent android:action="com.hypermusic.action.OPEN_PLAYLISTS"
+            android:targetPackage="com.hypermusic" android:targetClass="com.hypermusic.MainActivity" />
+    </shortcut>
+    <shortcut android:shortcutId="history" android:icon="@drawable/ic_shortcut_history"
+        android:shortcutShortLabel="@string/widget_shortcut_history">
+        <intent android:action="com.hypermusic.action.OPEN_HISTORY"
+            android:targetPackage="com.hypermusic" android:targetClass="com.hypermusic.MainActivity" />
+    </shortcut>
+    <shortcut android:shortcutId="liked_songs" android:icon="@drawable/ic_shortcut_liked_songs"
+        android:shortcutShortLabel="@string/widget_shortcut_liked">
+        <intent android:action="com.hypermusic.action.OPEN_LIKED_SONGS"
+            android:targetPackage="com.hypermusic" android:targetClass="com.hypermusic.MainActivity" />
+    </shortcut>
+</shortcuts>
