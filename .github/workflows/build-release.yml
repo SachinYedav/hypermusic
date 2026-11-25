@@ -4,6 +4,12 @@ on:
   push:
     tags:
       - "v*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Existing release tag (for example, v0.1.0)"
+        required: true
+        type: string
 
 permissions:
   contents: write
@@ -17,7 +23,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     env:
-      TAG: ${{ github.ref_name }}
+      TAG: ${{ inputs.tag || github.ref_name }}
       REPOSITORY: ${{ github.repository }}
     defaults:
       run:
@@ -26,6 +32,7 @@ jobs:
       - name: Checkout tagged source
         uses: actions/checkout@v4
         with:
+          ref: refs/tags/${{ inputs.tag || github.ref_name }}
           fetch-depth: 0
 
       - name: Set up Node.js
@@ -42,7 +49,7 @@ jobs:
           channel=$(node scripts/release.mjs notes "$TAG" "$RUNNER_TEMP/notes.md")
           echo "channel=$channel" >> "$GITHUB_OUTPUT"
           gh api --paginate --slurp "repos/$REPOSITORY/releases?per_page=100" |
-            jq --arg tag "$TAG" '[.[][] | select(.tag_name == $tag)] | if length > 1 then error("Duplicate release tag") else .[0] end' > "$RUNNER_TEMP/release.json"
+            jq --arg tag "$TAG" '[.[][] | select(.tag_name == $tag)] | if length > 1 then error("Multiple releases for \($tag): \(map({id, tag_name, draft}))") else .[0] end' > "$RUNNER_TEMP/release.json"
           mkdir -p "$RUNNER_TEMP/apk"
           count=$(jq '.assets | length' "$RUNNER_TEMP/release.json")
           if [[ "$count" == 0 ]]; then
@@ -50,7 +57,9 @@ jobs:
             echo "build=true" >> "$GITHUB_OUTPUT"
           else
             jq -e --arg name "HyperMusic-${TAG#v}.apk" '.assets | length == 1 and .[0].name == $name and .[0].state == "uploaded"' "$RUNNER_TEMP/release.json" > /dev/null
-            gh release download "$TAG" --pattern "HyperMusic-${TAG#v}.apk" --dir "$RUNNER_TEMP/apk"
+            asset_id=$(jq -er '.assets[0].id' "$RUNNER_TEMP/release.json")
+            gh api "repos/$REPOSITORY/releases/assets/$asset_id" -H "Accept: application/octet-stream" \
+              > "$RUNNER_TEMP/apk/HyperMusic-${TAG#v}.apk"
           fi
 
       - name: Set up JDK 17
@@ -102,16 +111,20 @@ jobs:
           release="$RUNNER_TEMP/release.json"
           apk="$RUNNER_TEMP/apk/HyperMusic-${TAG#v}.apk"
           if jq -e '. == null' "$release" > /dev/null; then
-            prerelease=()
-            if [[ "$CHANNEL" == "preview" ]]; then prerelease=(--prerelease); fi
-            gh release create "$TAG" --verify-tag --draft --title "HyperMusic $TAG" \
-              --notes-file "$RUNNER_TEMP/notes.md" "${prerelease[@]}"
-            gh api --paginate --slurp "repos/$REPOSITORY/releases?per_page=100" |
-              jq -e --arg tag "$TAG" '[.[][] | select(.tag_name == $tag)] | if length == 1 then .[0] else error("Expected one draft") end' > "$release"
+            gh api "repos/$REPOSITORY/git/ref/tags/$TAG" > /dev/null
+            prerelease=false
+            if [[ "$CHANNEL" == "preview" ]]; then prerelease=true; fi
+            gh api --method POST "repos/$REPOSITORY/releases" \
+              -f tag_name="$TAG" -f name="HyperMusic $TAG" \
+              -F body=@"$RUNNER_TEMP/notes.md" -F draft=true -F prerelease="$prerelease" > "$release"
+            jq -e --arg tag "$TAG" \
+              'if .tag_name == $tag and .draft == true then true else error("Unexpected draft response: \({id, tag_name, draft})") end' "$release" > /dev/null
           fi
-          id=$(jq -er '.id' "$release")
+          id=$(jq -er --arg tag "$TAG" \
+            'if .tag_name == $tag and (.id | type == "number") and .id > 0 then .id else error("Invalid release identity: \({id, tag_name, draft})") end' "$release")
           if [[ "$BUILD_APK" == true ]]; then
-            gh release upload "$TAG" "$apk"
+            gh api --method POST "https://uploads.github.com/repos/$REPOSITORY/releases/$id/assets?name=HyperMusic-${TAG#v}.apk" \
+              -H "Content-Type: application/vnd.android.package-archive" --input "$apk" > "$RUNNER_TEMP/asset.json"
           fi
           gh api "repos/$REPOSITORY/releases/$id" > "$release"
 
@@ -121,7 +134,7 @@ jobs:
           args=(record "$TAG" "$REPOSITORY" "$apk" "$RUNNER_TEMP/badging" "$RUNNER_TEMP/signing" "$release" "$feed")
           node scripts/release.mjs "${args[@]}" --check
           if jq -e '.draft' "$release" > /dev/null; then
-            gh api --method PATCH "repos/$REPOSITORY/releases/$id" -F draft=false > "$release"
+            gh api --method PATCH "repos/$REPOSITORY/releases/$id" -f tag_name="$TAG" -F draft=false > "$release"
           fi
           node scripts/release.mjs "${args[@]}"
 
