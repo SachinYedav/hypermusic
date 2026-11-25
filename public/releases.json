@@ -1,7 +1,106 @@
 {
   "schemaVersion": 1,
-  "releases": [],
-  "status": "error",
-  "data": null,
-  "message": "No HyperMusic releases have been published yet."
+  "releases": [
+    {
+      "version": "0.1.0",
+      "versionCode": 1,
+      "date": "2026-11-25",
+      "channel": "stable",
+      "url": "https://github.com/SachinYedav/hypermusic/releases/tag/v0.1.0",
+      "summary": "The first public release of HyperMusic for Android brings music and podcast streaming, offline downloads and local music playback. Available for Android 8.0 and later. Open source under GPL-3.0-or-later.",
+      "details": {
+        "features": [
+          "Discovery and search. Browse new releases, moods and mixes, or find songs, albums, artists and podcasts. Includes search suggestions, voice search on supported devices, and content language and region settings.",
+          "Background playback. Listen to music and podcasts with notification and lock-screen controls. Switch to video for supported content.",
+          "Local music. Browse music in your library’s From Device section. Device files support playback and queueing; adding them to Liked Songs or saved playlists is not supported.",
+          "Offline downloads. Download supported tracks and podcast episodes, including video for supported podcasts. Pause, resume or cancel downloads, with a Wi-Fi-only option.",
+          "Your library. Create playlists, like tracks, save albums and podcasts, follow artists, and keep episodes for later. Your library is stored locally, with no HyperMusic account required.",
+          "Queue and history. Add, remove and reorder tracks, shuffle or repeat, and enable autoplay. Optionally keep your queue between sessions and revisit recently played tracks.",
+          "Lyrics and sharing. View synced or plain lyrics where available, translate lyrics on demand, share selected lines as text or a lyric card, and share track links.",
+          "Quality settings. Choose Data Saver, Standard or High separately for streaming and downloads. Available quality depends on the source.",
+          "Sound controls. Adjust equalizer bands or use presets, bass boost, virtualizer, loudness boost and skip silence. Some audio effects depend on device support.",
+          "Sleep timer. Stop playback after 15, 30, 45 or 60 minutes, or when the current track ends.",
+          "Themes and player colors. Choose Light, Dark or System Default, with optional artwork-driven player colors.",
+          "Widgets and shortcuts. Choose from four home-screen widget layouts. Open Search, Playlists, Liked Songs or History through supported launcher shortcuts.",
+          "Storage and updates. Review storage usage, clear caches, history or downloads, and check for app updates from Settings.",
+          "No app-inserted ads. HyperMusic does not insert ads into playback or display ad banners. Sponsorships included in the original content may still play."
+        ],
+        "improvements": [],
+        "fixes": []
+      },
+      "signerSha256": "635f3f312a4cd63b176c5ef7bbbc5e3406a9611a41cf40ac778933aab26e67ae",
+      "apk": {
+        "name": "HyperMusic-0.1.0.apk",
+        "url": "https://github.com/SachinYedav/hypermusic/releases/download/v0.1.0/HyperMusic-0.1.0.apk",
+        "bytes": 7643648,
+        "sha256": "08562b3705ced1051d3891ea5714006afbffdcad336a3986d15f364ff7e1186f"
+      }
+    }
+  ],
+  "status": "success",
+  "data": {
+    "latestVersion": "0.1.0",
+    "versionCode": 1,
+    "forceUpdate": false,
+    "releaseDate": "2026-11-25",
+    "downloadUrl": "https://github.com/SachinYedav/hypermusic/releases/download/v0.1.0/HyperMusic-0.1.0.apk",
+    "changelog": [
+      {
+        "type": "feature",
+        "text": "Discovery and search. Browse new releases, moods and mixes, or find songs, albums, artists and podcasts. Includes search suggestions, voice search on supported devices, and content language and region settings."
+      },
+      {
+        "type": "feature",
+        "text": "Background playback. Listen to music and podcasts with notification and lock-screen controls. Switch to video for supported content."
+      },
+      {
+        "type": "feature",
+        "text": "Local music. Browse music in your library’s From Device section. Device files support playback and queueing; adding them to Liked Songs or saved playlists is not supported."
+      },
+      {
+        "type": "feature",
+        "text": "Offline downloads. Download supported tracks and podcast episodes, including video for supported podcasts. Pause, resume or cancel downloads, with a Wi-Fi-only option."
+      },
+      {
+        "type": "feature",
+        "text": "Your library. Create playlists, like tracks, save albums and podcasts, follow artists, and keep episodes for later. Your library is stored locally, with no HyperMusic account required."
+      },
+      {
+        "type": "feature",
+        "text": "Queue and history. Add, remove and reorder tracks, shuffle or repeat, and enable autoplay. Optionally keep your queue between sessions and revisit recently played tracks."
+      },
+      {
+        "type": "feature",
+        "text": "Lyrics and sharing. View synced or plain lyrics where available, translate lyrics on demand, share selected lines as text or a lyric card, and share track links."
+      },
+      {
+        "type": "feature",
+        "text": "Quality settings. Choose Data Saver, Standard or High separately for streaming and downloads. Available quality depends on the source."
+      },
+      {
+        "type": "feature",
+        "text": "Sound controls. Adjust equalizer bands or use presets, bass boost, virtualizer, loudness boost and skip silence. Some audio effects depend on device support."
+      },
+      {
+        "type": "feature",
+        "text": "Sleep timer. Stop playback after 15, 30, 45 or 60 minutes, or when the current track ends."
+      },
+      {
+        "type": "feature",
+        "text": "Themes and player colors. Choose Light, Dark or System Default, with optional artwork-driven player colors."
+      },
+      {
+        "type": "feature",
+        "text": "Widgets and shortcuts. Choose from four home-screen widget layouts. Open Search, Playlists, Liked Songs or History through supported launcher shortcuts."
+      },
+      {
+        "type": "feature",
+        "text": "Storage and updates. Review storage usage, clear caches, history or downloads, and check for app updates from Settings."
+      },
+      {
+        "type": "feature",
+        "text": "No app-inserted ads. HyperMusic does not insert ads into playback or display ad banners. Sponsorships included in the original content may still play."
+      }
+    ]
+  }
 }
